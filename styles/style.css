@@ -71,7 +71,7 @@ main .prodcutContainer .productGallery .productCard {
   gap: 5px;
   flex-wrap: wrap;
 }
-main .prodcutContainer .productGallery .productCard .discountPrice {
+main .prodcutContainer .productGallery .productCard .actualPrice {
   text-decoration: line-through;
   color: rgb(109, 105, 105);
 }

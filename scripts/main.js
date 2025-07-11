@@ -1,3 +1,4 @@
+import { productDiscount } from "./utils/moneyCalculations.js";
 let displayProducts = document.querySelector("main");
 // we use dummyJson to get products
 let productHTML = ""; //this will contain all the prducts html inside foreach loop
@@ -7,13 +8,12 @@ let getProducts = async () => {
     if (!response.ok) {
       throw new Error("network response was not ok......");
     }
-    let data = await response.json();  // return the hole object 
-    console.log(data);
-    let products = data.products
-    console.log(products)
+    let data = await response.json(); // return the hole object
+    // console.log(data);
+    let products = data.products;
+    // console.log(products);
     products.forEach((product) => {
-      
-      return productHTML += `
+      return (productHTML += `
         <div class="prodcutContainer">
           
           <div class="productGallery">
@@ -27,23 +27,21 @@ let getProducts = async () => {
                 </div>
                 <div class="name">${product.title}</div>
                 <div class="price">
-                  <span class="discountPrice">$${product.discountPercentage}</span>
-                  <span class="actualPrice">$${product.price}</span>
+                <span class="actualPrice">$${product.price}</span>
+                  <span class="discountPrice">$${productDiscount(
+                    product.price,
+                    product.discountPercentage
+                  )}</span>
                 </div>
               </div>
             </a>
           </div>
         </div>
-      `;
-      
+      `);
     });
-    displayProducts.innerHTML=productHTML
+    displayProducts.innerHTML = productHTML;
   } catch (error) {
-    console.log(`Error : ${error}`)
+    console.log(`Error : ${error}`);
   }
 };
 getProducts();
-
-
-
-
