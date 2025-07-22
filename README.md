@@ -3,7 +3,7 @@
 It fetches product data from a public API and allows users to add items to a cart,
 update quantities, view totals, and simulate a checkout process.<p>
 <b>Live Demo</b>
-View Live Project: <a href="https://furqan0020.github.io/MiniMart/" target='_blank'>MiniMart</a>
+View Live Project: <a href="https://furqan0020.github.io/MiniMart/" target="_blank">MiniMart</a>
 <b>Features</b>
 - Fetch products from an external API
 - Display products dynamically
